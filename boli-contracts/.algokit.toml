@@ -1,0 +1,56 @@
+# AlgoKit configuration file for the Boli project
+# For more information on configuration options, see:
+# https://github.com/algorandfoundation/algokit-cli/blob/main/docs/features/algokit-toml.md
+
+project = "boli-platform"
+description = "Island Nations RWA tokenization platform on Algorand"
+author = "Boli Team"
+
+[smart_contracts]
+language = "tealscript"
+artifacts_folder = "contracts/artifacts"
+clients_folder = "contracts/clients"
+contract_folder = "contracts"
+
+[deploy]
+command_handler = "algokit deploy"
+node = "localnet"
+deployer = "algosigner"
+network = "localnet"
+
+[local_environment]
+algod_server = "http://localhost"
+algod_port = "4001"
+kmd_server = "http://localhost"
+kmd_port = "4002"
+indexer_server = "http://localhost"
+indexer_port = "8980"
+
+[feature.bootstrap]
+enabled = true
+dependencies = ["node", "python", "pre-commit", "npm-global"]
+
+# Define commands to manage the project lifecycle
+[project_command.build]
+command = "npm run build:contracts"
+description = "Build TEALScript contracts"
+
+[project_command.generate]
+command = "npm run generate:clients"
+description = "Generate TypeScript clients"
+
+[project_command.test]
+command = "npm test"
+description = "Run tests"
+
+[project_command.frontend]
+command = "cd frontend && npm run dev"
+description = "Start frontend development server"
+
+[project_command.deploy:testnet]
+command = "npm run deploy:testnet"
+description = "Deploy to TestNet"
+
+[project_command.deploy:mainnet]
+command = "npm run deploy:mainnet"
+description = "Deploy to MainNet"

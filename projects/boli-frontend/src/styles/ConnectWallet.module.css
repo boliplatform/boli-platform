@@ -1,0 +1,297 @@
+/* src/styles/ConnectWallet.module.css */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  padding: var(--spacing-4);
+  overflow-y: auto; /* Allow scrolling */
+}
+
+.modalOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalContent {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh; /* Limit height */
+  overflow-y: auto; /* Make content scrollable */
+  border: 1px solid var(--color-gray-200);
+  transform: translateY(20px);
+  transition: transform var(--transition-normal);
+  margin: auto; /* Center it */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modalOpen .modalContent {
+  transform: translateY(0);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  z-index: 10;
+}
+
+.modalTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  letter-spacing: -0.01em;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--color-gray-500);
+  cursor: pointer;
+  padding: var(--spacing-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.closeButton:hover {
+  color: var(--color-gray-800);
+  background-color: var(--color-gray-100);
+}
+
+.accountInfo {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.modalBody {
+  padding: var(--spacing-6);
+}
+
+.walletDescription {
+  margin-bottom: var(--spacing-6);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.walletList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+}
+
+.walletButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-4);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.walletButton:hover {
+  border-color: var(--color-blue);
+  background-color: var(--color-gray-50);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.walletButtonLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.walletIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius);
+}
+
+.kmdIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.walletName {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.walletConnectText {
+  color: var(--color-blue);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.walletHelp {
+  text-align: center;
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-8);
+}
+
+.walletHelpLink {
+  display: inline-block;
+  color: var(--color-blue);
+  font-weight: 500;
+  margin-top: var(--spacing-2);
+  transition: color var(--transition-fast);
+}
+
+.walletHelpLink:hover {
+  color: var(--color-blue-dark);
+  text-decoration: underline;
+}
+
+.walletInfo {
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  border-radius: var(--border-radius-lg);
+  margin-top: var(--spacing-4);
+  border: 1px solid var(--color-gray-200);
+}
+
+.walletInfoTitle {
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-base);
+}
+
+.walletInfoText {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.connectedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.connectedStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.connectedIcon {
+  color: var(--color-success);
+}
+
+.walletActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.viewAssetsButton,
+.viewTransactionsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.viewAssetsButton {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+}
+
+.viewAssetsButton:hover {
+  background-color: var(--color-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(77, 106, 146, 0.2);
+}
+
+.viewTransactionsButton {
+  background-color: var(--color-white);
+  color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-300);
+}
+
+.viewTransactionsButton:hover {
+  border-color: var(--color-gray-500);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.accountSecurity {
+  background-color: var(--color-gray-50);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-4);
+  border: 1px solid var(--color-gray-200);
+}
+
+.accountSecurityTitle {
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-base);
+}
+
+.accountSecurityText {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.disconnectButton {
+  background-color: var(--color-white);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  width: 100%;
+  margin-top: var(--spacing-4);
+  cursor: pointer;
+}
+
+.disconnectButton:hover {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}

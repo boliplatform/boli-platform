@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 2.1.4
+_src_path: gh:algorandfoundation/algokit-fullstack-template
+author_email: hilaal@gmail.com
+author_name: Hilal Agil
+contract_name: island_asset
+preset_name: starter
+project_name: boli
+

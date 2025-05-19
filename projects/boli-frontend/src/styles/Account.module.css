@@ -1,0 +1,165 @@
+/* src/styles/Account.module.css */
+
+.account {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-4);
+}
+
+.accountMain {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.accountIcon {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-blue-light);
+  opacity: 0.3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue);
+}
+
+.accountIconSvg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+}
+
+.accountInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.accountAddress {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.accountAddressDisplay {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-gray-900);
+  font-family: monospace;
+}
+
+.copyButton,
+.accountExplorer {
+  background: none;
+  border: none;
+  color: var(--color-gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copyButton:hover,
+.accountExplorer:hover {
+  color: var(--color-blue);
+  background-color: rgba(77, 106, 146, 0.1);
+}
+
+.copyIcon,
+.externalLinkIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.accountMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-1);
+}
+
+.networkBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.networkDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+}
+
+.networkName {
+  text-transform: capitalize;
+}
+
+.assetCount {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.accountBalance {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  background-color: var(--color-gray-50);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--color-gray-200);
+}
+
+.balanceLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.balanceValue {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  font-family: monospace;
+}
+
+.accountActions {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+.accountAction {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-1);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-2);
+  background: none;
+  color: var(--color-gray-700);
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.accountAction:hover {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+  background-color: rgba(77, 106, 146, 0.05);
+  transform: translateY(-1px);
+}

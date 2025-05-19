@@ -1,0 +1,33 @@
+/* src/styles/DisasterRecovery.module.css */
+
+.disasterRecovery {
+  display: flex;
+  flex-direction: column;
+}
+
+.disasterRecoveryHeader {
+  margin-bottom: var(--spacing-6);
+}
+
+/* Import shared styles from ComingSoon.module.css */
+.pageTitle,
+.pageDescription,
+.comingSoon,
+.comingSoonIcon,
+.comingSoonTitle,
+.comingSoonText,
+.assetPreview,
+.previewTitle,
+.previewGrid,
+.previewItem {
+  composes: pageTitle, 
+           pageDescription, 
+           comingSoon, 
+           comingSoonIcon, 
+           comingSoonTitle, 
+           comingSoonText, 
+           assetPreview, 
+           previewTitle, 
+           previewGrid, 
+           previewItem from './ComingSoon.module.css';
+}
